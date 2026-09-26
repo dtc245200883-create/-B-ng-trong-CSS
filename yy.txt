@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực hành Bảng trong CSS</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 30px;
+            background-color: #f4f6f9;
+            color: #333;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            color: #34495e;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+
+        /* 1. Bảng mặc định (Có đường viền đôi) */
+        .default-table, .default-table th, .default-table td {
+            border: 1px solid black;
+        }
+
+        /* 2. Bảng nâng cao sử dụng đầy đủ các thuộc tính CSS */
+        .styled-table {
+            /* Chiều rộng bảng */
+            width: 100%;
+            /* Gộp các đường viền thành 1 đường đơn */
+            border-collapse: collapse;
+            background-color: #ffffff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Định kiểu cho tiêu đề bảng (th) và ô dữ liệu (td) */
+        .styled-table th, .styled-table td {
+            /* Đường viền cho th và td */
+            border: 1px solid #dddddd;
+            /* Khoảng cách giữa đường viền và nội dung (padding) */
+            padding: 12px 15px;
+        }
+
+        /* Chiều cao và căn chỉnh cho tiêu đề (th) */
+        .styled-table th {
+            height: 50px;
+            /* Căn chỉnh theo chiều ngang (text-align) */
+            text-align: left;
+            /* Màu sắc: màu nền và màu chữ */
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        /* Căn chỉnh theo chiều dọc (vertical-align) và màu sắc dòng */
+        .styled-table td {
+            /* Căn chỉnh văn bản ở giữa hoặc dưới (middle/bottom) */
+            vertical-align: middle;
+        }
+
+        /* Xen kẽ màu nền cho các dòng (Zebra Striping) */
+        .styled-table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        /* Hiệu ứng rê chuột qua dòng */
+        .styled-table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Thực Hành Định Kiểu Bảng Trong CSS</h1>
+
+    <h2>1. Bảng chưa gộp đường viền (Viền đôi mặc định)</h2>
+    <table class="default-table">
+        <tr>
+            <th>Họ và tên</th>
+            <th>Email</th>
+        </tr>
+        <tr>
+            <td>Nguyễn Văn A</td>
+            <td>anguyen@gmail.com</td>
+        </tr>
+    </table>
+
+    <h2>2. Bảng đã hoàn thiện định kiểu CSS</h2>
+    <table class="styled-table">
+        <thead>
+            <tr>
+                <th>STT</th>
+                <th>Họ và tên</th>
+                <th>Chức vụ</th>
+                <th>Email</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Nguyễn Văn A</td>
+                <td>Developer</td>
+                <td>anguyen@gmail.com</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Trần Thị B</td>
+                <td>Designer</td>
+                <td>btran@gmail.com</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Lê Văn C</td>
+                <td>Tester</td>
+                <td>cle@gmail.com</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>Phạm Thị D</td>
+                <td>Project Manager</td>
+                <td>dpham@gmail.com</td>
+            </tr>
+        </tbody>
+    </table>
+
+</body>
+</html>
